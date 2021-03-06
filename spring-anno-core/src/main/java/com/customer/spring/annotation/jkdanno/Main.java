@@ -14,14 +14,19 @@ public class Main {
      * @param args
      * @throws @Demo Exception
      */
-    public static void main(String[] args) throws @Demo Exception {
-        @Demo Class<@Demo Child> childClass = Child.class;
+    public static void main(String[] args) throws /*@Demo */Exception {
+        /*@Demo */Class</*@Demo*/ Child> childClass = Child.class;
         System.out.println("childClass.getAnnotations() = " + Arrays.toString(childClass.getAnnotations()));
         System.out.println("childClass.getAnnotationsByType(Demo.class) = " + Arrays.toString(childClass.getAnnotationsByType(Demo.class)));
-        System.out.println("childClass.getAnnotations() = " + Arrays.toString(childClass.getAnnotations()));
+        System.out.println("childClass.getAnnotation(Demo.class) = " + childClass.getAnnotation(Demo.class));
 
         System.out.println("childClass.getDeclaredAnnotation(Demo.class) = " + childClass.getDeclaredAnnotation(Demo.class));
         System.out.println("childClass.getDeclaredAnnotations() = " + Arrays.toString(childClass.getDeclaredAnnotations()));
         System.out.println("childClass.getDeclaredAnnotationsByType(Demo.class) = " + Arrays.toString(childClass.getDeclaredAnnotationsByType(Demo.class)));
+
+        System.out.println("0 << 8 = " + (0 << 8));
+        System.out.println("1 << 8 = " + (1 << 8 | 0));
+        System.out.println("4 << 16 | 0 << 8 | 0 = " + (4 << 16 | 0 << 8 | 0));
+        System.out.println("4 << 16 = " + (4 << 16 ));
     }
 }
